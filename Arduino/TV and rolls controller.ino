@@ -53,7 +53,7 @@ void loop() {
       irsend.sendNEC(0x40BE52AD, 32); // menu ok
       break;
       case 54:
-      irsend.sendNEC(0x40BE20DF, 32); // діскавері сайнс
+      irsend.sendNEC(0x40BE20DF, 32); // discovery channel
       delay(100);
       irsend.sendNEC(0x40BEE01F, 32);
       break;
@@ -79,7 +79,7 @@ void loop() {
       delay(100);
       irsend.sendNEC(0x40BEB24D, 32);
       break;
-      case 57: // опуск двох рулетив в низ (базова точка)
+      case 57: // two rolls down
        stepper1.setMaxSpeed(400);
         stepper2.setMaxSpeed(400);
        positions[0] +=STEPS_PER_OUT_REV*11;
@@ -89,7 +89,7 @@ void loop() {
        motoroff();
         delay(500);
         break;
-        case 65: // підйом двох рулетив вверх
+        case 65: // lifting two rolls up
         stepper1.setMaxSpeed(350);
         stepper2.setMaxSpeed(350);
        positions[0] =0;
@@ -99,39 +99,39 @@ void loop() {
        motoroff();
         delay(500);
         break;
-        case 66: // опустити правий рол
+        case 66: // lower the right roll
         stepper1.setMaxSpeed(400);
         togo +=STEPS_PER_OUT_REV*11;
        stepper1.runToNewPosition(togo);
        motoroff();
         delay(500);
         break;
-        case 67: // підняти правий рол
+        case 67: //raise the right roll
         stepper1.setMaxSpeed(350);
         togo =0;
        stepper1.runToNewPosition(togo);
        motoroff();
         delay(500);
         break;
-        case 68: // опустити лівий рол
+        case 68: // lower the left roll
         stepper2.setMaxSpeed(400);
         togo +=STEPS_PER_OUT_REV*11;
        stepper2.runToNewPosition(togo);
        motoroff();
         delay(500);
         break;
-        case 69: // підняти лівий рол
+        case 69: // raise the left roll
         stepper2.setMaxSpeed(350);
         togo =0;
        stepper2.runToNewPosition(togo);
        motoroff();
         delay(500);
         break;
-         case 70: // включити настільну лампу
+         case 70: // turn on the table lamp
         digitalWrite(Mosfet, HIGH);
         delay(500);
         break;
-        case 71: // виключити настільну лампу
+        case 71: // turn off the table lamp
         digitalWrite(Mosfet, LOW);
         delay(500);
         break;
