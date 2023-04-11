@@ -14,3 +14,5 @@ Functional:
 - notebook record (in Ukrainian)
 
 Functionality is constantly evolving
+
+YouTube: https://youtu.be/W9QGSl-H2Us
